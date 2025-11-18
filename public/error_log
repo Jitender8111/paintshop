@@ -1,0 +1,29 @@
+[24-Jul-2025 19:17:03 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 7.4.33. in /home/rytwaydigital/public_html/vendor/composer/platform_check.php on line 28
+[08-Aug-2025 23:40:46 Asia/Kolkata] PHP Fatal error:  Uncaught UnexpectedValueException: Writing to the log file failed: Write of 3654 bytes failed with errno=28 No space left on device
+The exception occurred while attempting to log: file_put_contents(): Write of 441 bytes failed with errno=28 No space left on device
+Context: {"exception":{}} in /home/rytwaydigital/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:186
+Stack trace:
+#0 /home/rytwaydigital/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): Monolog\Handler\StreamHandler->write()
+#1 /home/rytwaydigital/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(391): Monolog\Handler\AbstractProcessingHandler->handle()
+#2 /home/rytwaydigital/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(646): Monolog\Logger->addRecord()
+#3 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Log/Logger.php(184): Monolog\Logger->error()
+#4 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Log/Logger.php(97): Illuminate\Log\Logger->writeLog()
+#5 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\Log\Logger->error()
+#6 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\Log\LogManager->error()
+#7 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#8 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(730): Illuminate\Foundation\Exceptions\Handler->report()
+#9 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(650): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#10 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(556): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#11 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(473): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#12 /home/rytwaydigital/public_html/app/Exceptions/Handler.php(102): Illuminate\Foundation\Exceptions\Handler->render()
+#13 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(218): App\Exceptions\Handler->render()
+#14 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(195): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 /home/rytwaydigital/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#17 {main}
+  thrown in /home/rytwaydigital/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 186
+[02-Sep-2025 22:43:56 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /home/rytwaydigital/public_html/vendor/maatwebsite/excel/src/Concerns/SkipsFailures.php on line 20
+[02-Sep-2025 22:47:06 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /home/rytwaydigital/public_html/vendor/maatwebsite/excel/src/Concerns/SkipsFailures.php on line 20
+[02-Sep-2025 23:06:06 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /home/rytwaydigital/public_html/vendor/maatwebsite/excel/src/Concerns/SkipsFailures.php on line 20
+[02-Sep-2025 23:10:18 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /home/rytwaydigital/public_html/vendor/maatwebsite/excel/src/Concerns/SkipsFailures.php on line 20
+[03-Sep-2025 06:19:54 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /home/rytwaydigital/public_html/vendor/maatwebsite/excel/src/Concerns/SkipsFailures.php on line 20
