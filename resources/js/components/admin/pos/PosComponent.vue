@@ -151,7 +151,7 @@
           </span>
           <span class="text-sm font-client capitalize leading-6 text-[#2E2F38]">
             {{
-              currencyFormat(subtotal, setting.site_digit_after_decimal_point,
+              currencyFormat(subtotal - totalTax, setting.site_digit_after_decimal_point,
                 setting.site_default_currency_symbol, setting.site_currency_position)
             }}
           </span>
@@ -182,7 +182,7 @@
           </span>
           <span class="text-sm font-medium font-client capitalize leading-6 text-[#2E2F38]">
             {{
-              currencyFormat((subtotal + totalTax) - posDiscount,
+              currencyFormat((subtotal ) - posDiscount,
                 setting.site_digit_after_decimal_point, setting.site_default_currency_symbol,
                 setting.site_currency_position)
             }}
@@ -215,7 +215,7 @@
 
   <ReceiptComponent :order="order" />
   <PaymentComponent v-on:orderSubmit="orderSubmit"
-    :total="currencyFormat((subtotal + totalTax) - posDiscount, setting.site_digit_after_decimal_point, setting.site_default_currency_symbol, setting.site_currency_position)" />
+    :total="currencyFormat((subtotal) - posDiscount, setting.site_digit_after_decimal_point, setting.site_default_currency_symbol, setting.site_currency_position)" />
 </template>
 <script>
 import LoadingComponent from "../components/LoadingComponent";
@@ -516,13 +516,16 @@ export default {
       }
     },
     orderSubmit: function (data) {
+      console.log('jiten ',data);
+      
       this.loading.isActive = true;
       this.form = {
         customer_id: this.checkoutProps.form.customer_id,
         subtotal: this.subtotal,
         discount: parseFloat(this.posCartDiscount),
         tax: this.totalTax,
-        total: this.total,
+        total: this.subtotal,
+        // total: this.total,
         order_type: orderTypeEnum.POS,
         source: sourceEnum.POS,
         payment_method: paymentTypeEnum.CASH_ON_DELIVERY,

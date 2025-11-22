@@ -173,8 +173,6 @@
                         </button>
                     </div>
                     <div class="flex flex-wrap items-center gap-8 mb-10 muted">
-                        {{ console.log(product)
-                         }}
                         <p class="text-green-600 font-semibold mb-4">This Product deliver in {{ product.delivery_days ?? 1 }} days when your order is completed.</p>
                          
                             
