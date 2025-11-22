@@ -245,6 +245,25 @@
                         </div>
                         <small class="db-field-alert" v-if="errors.tags">{{ errors.tags[0] }}</small>
                     </div>
+                    <div class="form-col-12 sm:form-col-12">
+                        <label for="delivery_days" class="db-field-title">Delivery Days</label>
+
+                        <input 
+                            v-on:keypress="onlyNumber($event)"
+                            v-model="props.form.delivery_days"
+                            :class="errors.delivery_days ? 'invalid' : ''"
+                            type="text"
+                            id="delivery_days"
+                            class="db-field-control"
+                            placeholder="Enter delivery days"
+                        >
+
+                        <small class="db-field-alert" v-if="errors.delivery_days">
+                            {{ errors.delivery_days[0] }}
+                        </small>
+                    </div>
+
+                    
 
                     <div class="form-col-12">
                         <label for="description" class="db-field-title">{{ $t("label.description") }}</label>

@@ -53,6 +53,7 @@ class ProductAdminResource extends JsonResource
             'rating_star'                => $this->rating_star,
             'rating_star_count'          => $this->rating_star_count,
             "barcode_image"              => $this->barcodeImage,
+            "delivery_days"              => $this->delivery_days,
         ];
     }
 }

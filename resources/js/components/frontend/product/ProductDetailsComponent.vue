@@ -31,9 +31,7 @@
                 </div>
 
                 <div class="col-12 sm:col-6 lg:col-7 lg:pl-10">
-                    <h2 class="text-3xl font-bold mb-3 capitalize">
-                        {{ product.name }}
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl font-bold capitalize mb-5">{{ product.name }}</h2>
                     <h3 class="flex items-start gap-4 mb-5">
                         <span class="text-2xl font-bold">
                             {{
@@ -131,7 +129,7 @@
                         </dd>
                     </dl>
 
-                    <div class="flex flex-wrap items-center gap-8 mb-10">
+                    <div class="flex flex-wrap items-center gap-8 mb-5">
 
                          <div>
                             <!-- If product exists in cart -->
@@ -173,6 +171,13 @@
                             class="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-btn-secondary text-blue-600 transition-all duration-300 hover:scale-110">
                            <i class="fa fa-share-alt text-xl"></i>
                         </button>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-8 mb-10 muted">
+                        {{ console.log(product)
+                         }}
+                        <p class="text-green-600 font-semibold mb-4">This Product deliver in {{ product.delivery_days ?? 1 }} days when your order is completed.</p>
+                         
+                            
                     </div>
                 </div>
             </div>
@@ -491,7 +496,8 @@ export default {
                         price: res.data.data.price,
                         oldPrice: res.data.data.old_price,
                         totalPrice: res.data.data.price,
-                        maximum_purchase_quantity: res.data.data.maximum_purchase_quantity
+                        maximum_purchase_quantity: res.data.data.maximum_purchase_quantity,
+                        delivery_days: res.data.data.delivery_days,
                     };
                     this.temp = {
                         name: res.data.data.name,
@@ -508,7 +514,8 @@ export default {
                         price: res.data.data.price,
                         oldPrice: res.data.data.old_price,
                         totalPrice: res.data.data.price,
-                        maximum_purchase_quantity: res.data.data.maximum_purchase_quantity
+                        maximum_purchase_quantity: res.data.data.maximum_purchase_quantity,
+                        delivery_days: res.data.data.delivery_days,
                     };
 
                     this.$store.dispatch("frontendProductCategory/ancestorsAndSelf", res.data.data.category_slug).then((categoryRes) => {
@@ -579,6 +586,7 @@ export default {
             this.temp.oldPrice = this.initProduct.oldPrice;
             this.temp.totalPrice = this.initProduct.price;
             this.temp.maximum_purchase_quantity = this.initProduct.maximum_purchase_quantity;
+            this.temp.delivery_days = this.initProduct.delivery_days
 
             if (variation) {
                 this.selectedVariation = variation;
@@ -593,6 +601,7 @@ export default {
                 this.temp.oldPrice = variation.old_price;
                 this.temp.totalPrice = variation.price;
                 this.temp.maximum_purchase_quantity = variation.maximum_purchase_quantity;
+                this.temp.delivery_days = this.initProduct.delivery_days;
 
                 if (variation.stock > 0) {
                     this.enableAddToCardButton = false;

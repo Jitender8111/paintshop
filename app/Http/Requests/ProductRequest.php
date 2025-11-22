@@ -56,6 +56,7 @@ class ProductRequest extends FormRequest
             'warranty'                   => ['nullable', 'string', 'max:100'],
             'description'                => ['nullable', 'string', 'max:5000'],
             'tags'                       => ['nullable', 'json'],
+            'delivery_days'              => ['nullable', 'string'],
         ];
     }
 

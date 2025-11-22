@@ -111,7 +111,6 @@ class ProductController extends AdminController
 
     public function generateSku(): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
     {
-        dd('sad');
         try {
             return response(['data' => ['product_sku' => $this->productService->generateSku()]], 200);
         } catch (Exception $exception) {

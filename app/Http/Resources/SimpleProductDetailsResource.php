@@ -44,6 +44,7 @@ class SimpleProductDetailsResource extends JsonResource
             'unit'                      => $this->unit?->name,
             'stock'                     => $this->show_stock_out == Activity::DISABLE ? ($this->can_purchasable == Ask::NO ? (int)env('NON_PURCHASE_QUANTITY') : (int)$this->stock_items_sum_quantity) : 0,
             'sku'                       => $this->sku,
+            'delivery_days'             => $this->delivery_days,
             "maximum_purchase_quantity" => $this->maximum_purchase_quantity,
             "low_stock_quantity_warning" => $this->low_stock_quantity_warning,
             'shipping'                  => [

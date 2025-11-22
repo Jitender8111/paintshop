@@ -47,7 +47,8 @@ class ProductService
         'refundable',
         'weight',
         'order',
-        'except'
+        'except',
+        'delivery_days'
     ];
 
     /**
@@ -107,6 +108,7 @@ class ProductService
                 if ($request->barcode_id === BarcodeType::UPC_A) {
                     $barcode_value = str_pad($request->sku, 11, '0', STR_PAD_LEFT);
                 }
+
                 $this->product = Product::create($request->validated() + ['slug' => Str::slug($request->name), 'variation_price' => $request->selling_price]);
                 if ($request->tags) {
                     $tagItems = json_decode($request->tags, true);

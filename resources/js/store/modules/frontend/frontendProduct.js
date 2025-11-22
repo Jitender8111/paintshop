@@ -1,5 +1,5 @@
 import axios from "axios";
-import appService from "../../../services/appService";
+import appService from "../../../services/appService"; 
 
 export const frontendProduct = {
     namespaced: true,
@@ -28,7 +28,7 @@ export const frontendProduct = {
         relatedProductPagination: [],
         wishlistProducts: [],
         wishlistProductPage: {},
-        wishlistProductPagination: [],
+        wishlistProductPagination: [], 
     },
     getters: {
         show: function (state) {

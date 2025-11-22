@@ -478,6 +478,7 @@ export default {
             this.props.form.convertTags = this.tagUpdate(product.product_tags);
             this.props.form.tags = ""
             this.props.form.description = product.description;
+            this.props.form.delivery_days = product.delivery_days;
         },
         tagUpdate: function (objects) {
             let tags = [];
