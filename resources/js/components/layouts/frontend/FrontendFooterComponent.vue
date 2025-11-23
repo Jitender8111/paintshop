@@ -97,12 +97,12 @@
         <div class="pt-4 pb-24 lg:py-4 mt-8 text-center border-t border-white/5">
             <p class="text-xs font-medium text-white">{{ setting.site_copyright }}</p>
         </div>
-        <a href="https://wa.me/+917047162922" class="whatsapp_float" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/+919934758077" class="whatsapp_float" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp whatsapp-icon"></i>
         </a>
 
         <!-- Call Floating Button -->
-        <a href="tel:‪+917047162922‬" class="call_float" target="_blank" rel="noopener noreferrer">
+        <a href="tel:‪+919934758077‬" class="call_float" target="_blank" rel="noopener noreferrer">
             <i class="fa fa-phone-alt call-icon"></i>
         </a>
     </footer>

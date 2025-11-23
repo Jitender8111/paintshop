@@ -71,13 +71,28 @@
                             class="db-field-control">
                         <small class="db-field-alert" v-if="errors.selling_price">{{ errors.selling_price[0] }}</small>
                     </div>
-
                     <div class="form-col-12 sm:form-col-6">
                         <label for="tax_id" class="db-field-title">{{ $t("label.tax") }}</label>
-                        <vue-select ref="tax_id" class="db-field-control f-b-custom-select" id="tax_id"
-                            v-bind:class="errors.tax_id ? 'invalid' : ''" v-model="props.form.tax_id" :options="taxes"
+                        <!-- <vue-select ref="tax_id" class="db-field-control f-b-custom-select" id="tax_id"
+                            v-bind:class="errors.tax_id ? 'invalid' : ''" v-model="taxArray" :options="taxes"
                             label-by="name" value-by="id" :closeOnSelect="true" :searchable="true" :clearOnClose="true"
-                            placeholder="--" search-placeholder="--" :multiple="true" />
+                            placeholder="--" search-placeholder="--" :multiple="true" /> -->
+                            <vue-select
+                                ref="tax_id"
+                                class="db-field-control f-b-custom-select"
+                                id="tax_id"
+                                :class="errors.tax_id ? 'invalid' : ''"
+                                v-model="props.form.tax_id"
+                                :options="taxes"
+                                label-by="name"
+                                value-by="id"
+                                :closeOnSelect="true"
+                                :searchable="true"
+                                :clearOnClose="true"
+                                placeholder="--"
+                                search-placeholder="--"
+                            />
+
                         <small class="db-field-alert" v-if="errors.tax_id">{{ errors.tax_id[0] }}</small>
                     </div>
 
@@ -402,6 +417,15 @@ export default {
         addButton: function () {
             return { title: this.$t("button.add_product") }
         },
+        taxArray: {
+            get() {
+                return this.props.form.tax_id;
+            },
+            set(val) {
+                // convert single value to array
+                this.props.form.tax_id = val ? [val] : [];
+            }
+        }
     },
     methods: {
         floatNumber(e) {

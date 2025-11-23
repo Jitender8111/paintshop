@@ -57,13 +57,14 @@
                                     <p class="text-xs leading-5 text-heading">{{ product.subtotal_currency_price }}
                                     </p>
                                 </div>
+                                
                                 <p v-if="product.variation_names" class="text-xs leading-5 text-heading max-w-[200px]">
                                     {{ product.variation_names }}
                                 </p>
-                                <p class="text-xs leading-5 text-heading" v-if="product.product_tax.length > 0"
+                                <!-- <p class="text-xs leading-5 text-heading" v-if="product.product_tax.length > 0"
                                     v-for="tax in product.product_tax" :key="tax">
                                     {{ tax.tax_name }} ({{ tax.tax_rate }}%)
-                                </p>
+                                </p> -->
                             </td>
                         </tr>
                     </tbody>

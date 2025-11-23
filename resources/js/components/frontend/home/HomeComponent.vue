@@ -1,5 +1,5 @@
 <template>
-    <!--<SliderComponent />-->
+    <SliderComponent />
 
     <CategoryComponent />
 

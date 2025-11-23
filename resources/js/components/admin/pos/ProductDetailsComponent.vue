@@ -74,9 +74,9 @@
                     </div>
                     <div v-if="!initialVariations.length || selectedVariation != null">
                         <p v-if="temp.stock > 0" class="capitalize">
-                            {{ $t('label.available') }}:
-                            <b>({{ temp.stock }}) </b>
-                            {{ product.unit }}
+                            {{ $t('label.available') }}
+                            <!-- <b>({{ temp.stock }}) </b>
+                            {{ product.unit }} -->
                         </p>
                         <p v-else class="capitalize text-danger">
                             {{ $t('label.stock_out') }}
