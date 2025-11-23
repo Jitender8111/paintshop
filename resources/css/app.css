@@ -580,4 +580,62 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     user-select: none;
 }
 
+/* WhatApp */
 
+.whatsapp_float {
+     position: fixed;
+     width: 60px;
+     height: 60px;
+     bottom: 90px;
+     left: 40px;
+     background-color: #25d366;
+     color: #FFF;
+     border-radius: 50px;
+     text-align: center;
+     font-size: 30px;
+     z-index: 100;
+}
+
+.call_float {
+     position: fixed;
+     width: 60px;
+     height: 60px;
+     bottom: 20px;
+     left: 40px;
+     background-color: #d35625;
+     color: #FFF;
+     border-radius: 50px;
+     text-align: center;
+     font-size: 30px;
+     z-index: 100;
+}
+
+.whatsapp-icon,
+.call-icon {
+     margin-top: 16px;
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+
+     .whatsapp-icon,
+     .call-icon {
+         margin-top: 10px;
+     }
+
+     .whatsapp_float {
+         width: 40px;
+         height: 40px;
+         bottom: 55px;
+         left: 10px;
+         font-size: 22px;
+     }
+
+     .call_float {
+         width: 40px;
+         height: 40px;
+         bottom: 10px;
+         left: 10px;
+         font-size: 22px;
+     }
+}
