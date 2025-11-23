@@ -31,6 +31,9 @@
                 </div>
 
                 <div class="col-12 sm:col-6 lg:col-7 lg:pl-10">
+                     <h4 v-if="product.brand" class="text-base text-gray-600 mb-2">
+                        <span class="font-semibold text-black">{{ product.brand.name }}</span>
+                    </h4>
                     <h2 class="text-3xl sm:text-4xl font-bold capitalize mb-5">{{ product.name }}</h2>
                     <h3 class="flex items-start gap-4 mb-5">
                         <span class="text-2xl font-bold">
@@ -135,7 +138,7 @@
                             <!-- If product exists in cart -->
                             <button
                                 v-if="carts.some(c => c.product_id === temp.productId)"
-                                @click.prevent="goToCart"
+                                @click.prevent="openCanvas('cart-canvas')"
                                 type="button"
                                 class="flex items-center gap-3 px-8 h-12 leading-12 rounded-full transition-all duration-500 bg-primary text-white shadow-btn-primary"
                             >
@@ -305,7 +308,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import LoadingComponent from "../components/LoadingComponent";
@@ -321,6 +324,7 @@ import { useHead } from '@vueuse/head';
 import 'vue-inner-image-zoom/lib/vue-inner-image-zoom.css';
 import InnerImageZoom from 'vue-inner-image-zoom';
 import SummeryComponent from "../checkout/CheckoutComponent.vue";
+import {useCanvas} from "../../../composables/canvas";
 
 export default {
     name: "ProductDetailsComponent",
@@ -337,12 +341,29 @@ export default {
     },
     setup() {
         const thumbsSwiper = ref(null);
+
+        const isSticky = ref();
+        const {openCanvas} = useCanvas();
+        onMounted(() => {
+            window.addEventListener('scroll', function () {
+                let windowScroll = this.scrollY;
+                if (windowScroll > 0) {
+                    isSticky.value = true;
+                } else {
+                    isSticky.value = false;
+                }
+            })
+        })
+
+
         const setThumbsSwiper = (swiper) => {
             thumbsSwiper.value = swiper;
         };
         return {
             thumbsSwiper,
             setThumbsSwiper,
+            isSticky,
+            openCanvas,
             modules: [FreeMode, Navigation, Thumbs],
         }
     },

@@ -1,8 +1,8 @@
 <template>
   <div v-if="isActive" class="fixed inset-0 flex items-center justify-center bg-black/30 z-[9999]">
     <span class="loader-wrap">
-      <span class="loader-base">Shopee </span>
-      <span class="loader-mask">Shopee </span>
+      <span class="loader-base">Unique shopee </span>
+      <span class="loader-mask">Unique shopee </span>
     </span>
   </div>
 </template>
