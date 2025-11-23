@@ -77,7 +77,7 @@
                         <vue-select ref="tax_id" class="db-field-control f-b-custom-select" id="tax_id"
                             v-bind:class="errors.tax_id ? 'invalid' : ''" v-model="props.form.tax_id" :options="taxes"
                             label-by="name" value-by="id" :closeOnSelect="true" :searchable="true" :clearOnClose="true"
-                            placeholder="--" search-placeholder="--" :multiple="true" />
+                            placeholder="--" search-placeholder="--" />
                         <small class="db-field-alert" v-if="errors.tax_id">{{ errors.tax_id[0] }}</small>
                     </div>
 

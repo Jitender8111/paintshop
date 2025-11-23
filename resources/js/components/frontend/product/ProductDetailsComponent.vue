@@ -99,8 +99,8 @@
                                 v-if="temp.stock > 0 && !lowStockWarning"
                                 class="capitalize"
                                 >
-                                {{ $t('label.available') }}:
-                                <b>({{ temp.stock }})</b> {{ product.unit }}
+                                {{ $t('label.available') }}
+                                <!-- <b>({{ temp.stock }})</b> {{ product.unit }} -->
                                 </p>
 
                                 <!-- ⚠️ Low Stock Warning -->

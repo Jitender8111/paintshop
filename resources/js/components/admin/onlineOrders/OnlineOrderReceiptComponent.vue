@@ -90,6 +90,22 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="text-xs text-left py-0.5  text-heading">
+                                    CGST = 1/2 (Tax %):
+                                </td>
+                                <td class="text-xs text-right py-0.5 text-heading">
+                                    {{ cleanTaxValue(order.tax_currency_price) }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-xs text-left py-0.5 text-heading">
+                                    SGST = 1/2 (Tax %):
+                                </td>
+                                <td class="text-xs text-right py-0.5 text-heading">
+                                    {{ cleanTaxValue(order.tax_currency_price) }}
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="text-xs text-left py-0.5 uppercase text-heading">{{ $t('label.discount') }}:
                                 </td>
                                 <td class="text-xs text-right py-0.5 text-heading">{{ order.discount_currency_price }}
@@ -254,5 +270,12 @@ export default {
             return this.$store.getters['onlineOrder/outletAddress'];
         }
     },
+    methods: {
+        cleanTaxValue(value) {
+            if (!value) return 0;
+            const num = parseFloat(value.replace(/[^0-9.]/g, ''));
+            return num / 2;
+        }
+    }
 }
 </script>

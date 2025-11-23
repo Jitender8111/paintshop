@@ -7,7 +7,7 @@
         <ul class="flex flex-col gap-3 p-4 border-b border-[#EFF0F6]">
             <li class="flex items-center justify-between">
                 <span class="capitalize">{{ $t('label.subtotal') }}</span>
-                <span class="font-medium">{{ currencyFormat(subtotal, setting.site_digit_after_decimal_point,
+                <span class="font-medium">{{ currencyFormat(subtotal - totalTax, setting.site_digit_after_decimal_point,
                     setting.site_default_currency_symbol, setting.site_currency_position) }}</span>
             </li>
             <li class="flex items-center justify-between">
@@ -29,7 +29,7 @@
         <div class="p-4">
             <dl class="flex items-center justify-between">
                 <dt class="font-semibold capitalize">{{ $t('label.total') }}</dt>
-                <dd class="font-semibold">{{ currencyFormat(total, setting.site_digit_after_decimal_point,
+                <dd class="font-semibold">{{ currencyFormat(subtotal, setting.site_digit_after_decimal_point,
                     setting.site_default_currency_symbol, setting.site_currency_position) }}</dd>
             </dl>
         </div>
